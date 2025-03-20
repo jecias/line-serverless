@@ -2,6 +2,7 @@ import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 
 const app = new Hono()
+app.get('/test', (c) => c.json({ success: true, message: 'API 正常運作' }))
 app.use('*', cors())
 app.get('/test', (c) => c.json({ success: true, message: 'API 正常運作' }))
 // 訂位 API
