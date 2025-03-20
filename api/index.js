@@ -3,7 +3,7 @@ import { cors } from 'hono/cors'
 
 const app = new Hono()
 app.use('*', cors())
-
+app.get('/test', (c) => c.json({ success: true, message: 'API 正常運作' }))
 // 訂位 API
 app.post('/booking', async (c) => {
   const { name, area, tents, people, cars, date, days } = await c.req.json()
